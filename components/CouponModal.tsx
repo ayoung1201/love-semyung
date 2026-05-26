@@ -12,7 +12,7 @@ export default function CouponModal({ isOpen, onClose }: { isOpen: boolean; onCl
         {/* 쿠폰 이미지 */}
         <div className="w-full mb-8 overflow-hidden rounded-2xl border-2 border-pink-100 shadow-inner">
           <img 
-            src="/쿠폰.png" 
+            src="/쿠폰.PNG" 
             alt="커피 쿠폰" 
             className="w-full h-auto object-contain"
           />
