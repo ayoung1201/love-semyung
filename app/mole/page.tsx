@@ -127,9 +127,13 @@ function MoleGameContent() {
   }, [isActive, score]);
 
   const handleMoleClick = (index: number) => {
-    if (index === moleIndex && isActive) {
+    if (!isActive) return;
+
+    if (index === moleIndex) {
       setScore(prev => prev + 5);
       setMoleIndex(null);
+    } else {
+      setScore(prev => Math.max(0, prev - 5));
     }
   };
 
@@ -137,7 +141,7 @@ function MoleGameContent() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-pink-50 font-sans">
       <p className="mb-6 text-gray-600 text-center font-medium">
         안녕하세요, <span className="text-pink-600 font-bold">{nameFromUrl}</span>님!<br/>
-        <span className="text-sm">푸린을 잡아 100점을 넘겨보세요! 🍮</span>
+        <span className="text-sm">푸린을 잡아 100점을 넘겨보세요! 🍮<br/>(잘못 누르면 5점 감점!)</span>
       </p>
 
       <div className="flex justify-between w-full max-w-sm mb-4 text-xl font-black px-2">

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const SECRET_PASSWORD = 'love-semyeong-2026';
+  const SECRET_PASSWORD = 'love-semyung-2026';
 
   // 1. 주소창의 쿼리 파라미터(일회용 열쇠) 확인
   const urlParams = new URL(request.url).searchParams;
